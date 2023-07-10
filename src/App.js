@@ -27,7 +27,9 @@ search: searchValue,
 },
 });
 const data = response.data;
-if (data.length === 0) {
+setTotalPlayers(data.totalPlayers);
+setTotalStartsByQuery(data.totalStartsByQuery);
+if (data[0].length === 0) {
 setPlayers([
 {
 id: 'NoData',
@@ -36,9 +38,13 @@ name: 'No player data available.',
 ]);
 } else {
 setPlayers(data.sortedByPercent);
+for(var i = 0;i<players.length;i++)
+{
+    players[i].percentofPlayers=Math.round(((1/totalPlayers)*100),2);
+    players[i].percentOfStarts=Math.round(((players[i].percent/totalStartsByQuery)*100),2);
+            };
+
 }
-setTotalPlayers(data.totalPlayers);
-setTotalStartsByQuery(data.totalStartsByQuery);
 } catch (error) {
 console.error(error);
 }
