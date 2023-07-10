@@ -22,9 +22,9 @@ const fetchData = async () => {
 try {
 
 
-const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/api/teams');
-
-
+const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/api/teams', {
+mode: "cors"
+});
 setTeams(response.data);
 for(let i=0;i<response.data.length;i++)
 {
