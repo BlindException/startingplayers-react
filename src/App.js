@@ -143,7 +143,7 @@ players.map((player) => (
 <td>{player.percent}</td>
 <td>{Math.round((player.percent/totalPlayers)*100)}%</td>
 <td>
-{Math.round((player.percent / totalStarts) * 100)}%
+{Math.round((player.percent / totalStartsByQuery) * 100)}%
 </td>
 
 
