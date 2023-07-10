@@ -38,7 +38,7 @@ name: 'No player data available.',
 ]);
 } else {
 setPlayers(data.sortedByPercent);
-for(var i = 0;i<players.length;i++)
+for(var i = 0;i<data[0].length;i++)
 {
     players[i].percentofPlayers=Math.round(((1/totalPlayers)*100),2);
     players[i].percentOfStarts=Math.round(((players[i].percent/totalStartsByQuery)*100),2);
