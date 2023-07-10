@@ -1,35 +1,15 @@
 import React, { useState, useEffect } from 'react';
-
-
 import axios from 'axios';
-
-
 const NFLDropDown = ({ onChange }) => {
-
-
 const [teams, setTeams] = useState([]);
-
-
 const [team, setTeam] = useState('');
-
-
 useEffect(() => {
-
-
 const fetchData = async () => {
-
-
 try {
-
-
 const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/teams', {
 mode: "cors"
 });
 setTeams(response.data);
-for(let i=0;i<response.data.length;i++)
-{
-    console.log(response.data[i]);
-}
 
 } catch (error) {
 

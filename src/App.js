@@ -35,7 +35,7 @@ name: 'No player data available.',
 }
 ]);
 } else {
-setPlayers(data);
+setPlayers(data.sortedByPercent);
 }
 setTotalPlayers(data.totalPlayers);
 setTotalStartsByQuery(data.totalStartsByQuery);
