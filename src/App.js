@@ -38,12 +38,6 @@ name: 'No player data available.',
 ]);
 } else {
 setPlayers(data.sortedByPercent);
-for(var i = 0;i<totalPlayers;i++)
-{
-    players[i].percentofPlayers=Math.round(((1/totalPlayers)*100),2);
-    players[i].percentOfStarts=Math.round(((players[i].percent/totalStartsByQuery)*100),2);
-            };
-
 }
 } catch (error) {
 console.error(error);
@@ -147,9 +141,9 @@ players.map((player) => (
 <td>{player.team}</td>
 <td>{player.position}</td>
 <td>{player.percent}</td>
-<td>{Math.round((player.percent/totalPlayers)*100)}%</td>
+<td>{player.percentOfPlayers}%</td>
 <td>
-{Math.round((player.percent / totalStartsByQuery) * 100)}%
+{player.percentOfStarts}%
 </td>
 
 
