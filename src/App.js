@@ -29,7 +29,7 @@ search: searchValue,
 const data = response.data;
 setTotalPlayers(data.totalPlayers);
 setTotalStartsByQuery(data.totalStartsByQuery);
-if (data[0].length === 0) {
+if (totalPlayers== 0) {
 setPlayers([
 {
 id: 'NoData',
@@ -38,7 +38,7 @@ name: 'No player data available.',
 ]);
 } else {
 setPlayers(data.sortedByPercent);
-for(var i = 0;i<data[0].length;i++)
+for(var i = 0;i<totalPlayers;i++)
 {
     players[i].percentofPlayers=Math.round(((1/totalPlayers)*100),2);
     players[i].percentOfStarts=Math.round(((players[i].percent/totalStartsByQuery)*100),2);
