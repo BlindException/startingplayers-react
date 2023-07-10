@@ -1,65 +1,169 @@
 import React, { useEffect, useState } from 'react';
+
+
 import axios from 'axios';
+
+
 import NFLDropDown from './NFLDropDown';
 
+
 function App() {
+
+
 const [players, setPlayers] = useState([]);
+
+
 const [leagueType, setLeagueType] = useState('');
+
+
 const [week, setWeek] = useState('');
+
+
 const [team, setTeam] = useState('');
+
+
 const [position, setPosition] = useState('');
+
+
+const [searchValue, setSearchValue] = useState('');
+
+
+const [searchTimeout, setSearchTimeout] = useState(null);
+
+
 useEffect(() => {
+
+
 fetchData();
-}, [leagueType, week, team, position]);
+
+
+}, [leagueType, week, team, position, searchValue]);
+
+
 const fetchData = async () => {
+
+
 try {
+
+
 const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/api/', {
-    mode: "cors",
+
+
+mode: "cors",
+
+
 params: {
+
+
 leagueType: leagueType,
-    week: week,
+
+
+week: week,
+
+
 team: team,
+
+
 position: position,
+
+
+search: searchValue,
+
+
 },
-   });
+
+
+});
+
+
 const data = response.data;
-    for(var i=0;i<data.length;i++)
-    {
+
+
+for (var i = 0; i < data.length; i++) {
+
+
 console.log(data[i].name);
-        }
-    
-    if (data.length === 0) {
-    
-    
-    setPlayers([{
-        'id':'NoData',
-        name:'No player data available.',
-    }]);
-    
-    
-    } else {
-    
-    
-    setPlayers(data);
-    
-    
-    }
-    
-    
-    } catch (error) {
-    
-    
-    console.error(error);
-    
-    
-    }
-    
-    
-   };
+
+
+}
+
+
+if (data.length === 0) {
+
+
+setPlayers([
+
+
+{
+
+
+'id': 'NoData',
+
+
+name: 'No player data available.',
+
+
+}
+
+
+]);
+
+
+} else {
+
+
+setPlayers(data);
+
+
+}
+
+
+} catch (error) {
+
+
+console.error(error);
+
+
+}
+
+
+};
+
+
 const handleTeamChange = (selectedTeam) => {
 
 
 setTeam(selectedTeam);
+
+
+};
+
+
+const handleSearchChange = (e) => {
+
+
+const value = e.target.value;
+
+
+setSearchValue(value);
+
+
+if (searchTimeout) {
+
+
+clearTimeout(searchTimeout);
+
+
+}
+
+
+setSearchTimeout(setTimeout(() => {
+
+
+fetchData();
+
+
+}, 3000));
 
 
 };
@@ -212,6 +316,33 @@ onChange={(e) => setPosition(e.target.value)}
 </div>
 
 
+<div>
+
+
+<label htmlFor="search">Search for player name:</label>
+
+
+<input
+
+
+type="search"
+
+
+id="search"
+
+
+value={searchValue}
+
+
+onChange={handleSearchChange}
+
+
+/>
+
+
+</div>
+
+
 <table>
 
 
@@ -305,4 +436,4 @@ players.map((player) => (
 }
 
 
-export default App;
+export default App
