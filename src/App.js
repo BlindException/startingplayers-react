@@ -14,6 +14,7 @@ fetchData();
 const fetchData = async () => {
 try {
 const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/api/', {
+    mode: "cors",
 params: {
 leagueType: leagueType,
     week: week,
