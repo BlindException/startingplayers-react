@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
-
 import axios from 'axios';
-
-
 import NFLDropDown from './NFLDropDown';
-
-
+import 'bootstrap/dist/js/bootstrap.min.js';
 function App() {
 
 
@@ -61,7 +56,7 @@ const fetchData = async () => {
 try {
 
 
-const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/', {
+const response = await axios.get('https://robertprockjr.com/mfl/', {
 
 
 mode: "cors",
@@ -190,13 +185,16 @@ fetchData();
 return (
 
 
-<div>
+<div className="container">
 
 
-<h1>Starting Players</h1>
+<h1 className="text-center mt-5">Starting Players</h1>
 
 
-<div>
+<div className="row">
+
+
+<div className="col-md-6">
 
 
 <label htmlFor="leagueType">League Type:</label>
@@ -212,6 +210,9 @@ value={leagueType}
 
 
 onChange={(e) => setLeagueType(e.target.value)}
+
+
+className="form-control"
 
 
 >
@@ -235,7 +236,7 @@ onChange={(e) => setLeagueType(e.target.value)}
 </div>
 
 
-<div>
+<div className="col-md-6">
 
 
 <label htmlFor="week">Week:</label>
@@ -251,6 +252,9 @@ value={week}
 
 
 onChange={(e) => setWeek(e.target.value)}
+
+
+className="form-control"
 
 
 >
@@ -280,7 +284,13 @@ onChange={(e) => setWeek(e.target.value)}
 </div>
 
 
-<div>
+</div>
+
+
+<div className="row">
+
+
+<div className="col-md-6">
 
 
 <label htmlFor="team">Team:</label>
@@ -292,7 +302,7 @@ onChange={(e) => setWeek(e.target.value)}
 </div>
 
 
-<div>
+<div className="col-md-6">
 
 
 <label htmlFor="position">Position:</label>
@@ -308,6 +318,9 @@ value={position}
 
 
 onChange={(e) => setPosition(e.target.value)}
+
+
+className="form-control"
 
 
 >
@@ -334,7 +347,13 @@ onChange={(e) => setPosition(e.target.value)}
 </div>
 
 
-<div>
+</div>
+
+
+<div className="row">
+
+
+<div className="col-md-6">
 
 
 <label htmlFor="search">Search for player name:</label>
@@ -355,13 +374,22 @@ value={searchValue}
 onChange={handleSearchChange}
 
 
+className="form-control"
+
+
 />
 
 
 </div>
 
 
-<div>
+</div>
+
+
+<div className="row">
+
+
+<div className="col-md-6">
 
 
 <p>Total Players: {totalPlayers}</p>
@@ -373,7 +401,16 @@ onChange={handleSearchChange}
 </div>
 
 
-<table>
+</div>
+
+
+<div className="row">
+
+
+<div className="col-md-12">
+
+
+<table className="table table-responsive">
 
 
 <thead>
@@ -461,6 +498,12 @@ players.map((player) => (
 
 
 </table>
+
+
+</div>
+
+
+</div>
 
 
 </div>
