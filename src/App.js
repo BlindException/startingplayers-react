@@ -153,7 +153,7 @@ players.map((player) => (
 <td>{player.position}</td>
 <td>{player.starter_count}</td>
 <td>{player.nonstarter_count}</td>
-<td>{((player.starter_count/ player.player_count)*100).toFixed(2)}%</td>
+<td>{player.starting_percent}%</td>
 </tr>
 ))
 )}
