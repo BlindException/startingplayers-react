@@ -1,27 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
-
 import axios from 'axios';
-
-
 import NFLDropDown from './NFLDropDown';
-
-
 import 'bootstrap/dist/js/bootstrap.min.js';
-
-
 function App() {
-
-
 const [players, setPlayers] = useState([]);
-
-
 const [leagueType, setLeagueType] = useState('');
-
-
 const [week, setWeek] = useState('');
-
-
 const [team, setTeam] = useState('');
 const [position, setPosition] = useState('');
 const [searchValue, setSearchValue] = useState('');
@@ -40,50 +24,20 @@ const response = await axios.get('https://robertprockjr.com/mfl_v2/', {
 mode: "cors",
 params: {
 leagueType: leagueType,
-
-
 week: week,
-
-
 team: team,
-
-
 position: position,
-
-
 search: searchValue,
-
-
 sortedBy: sortedBy,
-
-
 sortOrder: sortOrder,
-
-
 },
-
-
 });
-
-
 const data = response.data;
-
-
 if (data.length === 0) {
-
-
 setPlayers([
-
-
 {
-
-
 id: 'NoData',
-
-
 name: 'No player data available.',
-
-
 },
 ]);
 } else {
@@ -144,7 +98,7 @@ const handleSort = (column) => {
 
     if (sortedBy === column) {
     
-       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+       setSortOrder(sortOrder === 'desc' ? 'asc' : 'asc');
     
        } else {
     
@@ -152,7 +106,7 @@ const handleSort = (column) => {
     setSortedBy(column);
     
     
-    setSortOrder('asc');
+    setSortOrder('desc');
     
     
     }
@@ -163,23 +117,17 @@ const handleSort = (column) => {
 
 return (
 <div className="container">
-<h1 className="text-center mt-5">Starting Players</h1>
+    <header>
+<h1 className="text-center mt-5">2022 Safe League Rosters</h1>
+</header>
 <div className="row">
 <div className="col-md-6">
 <label htmlFor="leagueType">League Type:</label>
 <select
 id="leagueType"
-
-
 value={leagueType}
-
-
 onChange={(e) => setLeagueType(e.target.value)}
-
-
 className="form-control"
-
-
 >
 
 
