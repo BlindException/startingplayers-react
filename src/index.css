@@ -5,9 +5,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:lightgray;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.table{
+  background-color:white;
+  padding:15px;
+  }
+
+.QB{
+  background-color:blue;
+  opacity:0.6;
+  font-weight:bold;
+line-height:1.8;
+padding:0.5;
+  color:black;
+}
+.RB{
+  background-color:green;
+  opacity:0.6;
+  font-weight:bold;
+  line-height:1.8;
+padding:0.5;
+  color:black;
+}
+.WR{
+  background-color:pink;
+  opacity:0.6;
+  font-weight:bold;
+  line-height:1.8;
+padding:0.5;
+  color:black;
+}
+.TE{
+  background-color:purple;
+  opacity:0.6;
+  font-weight:bold;
+  line-height:1.8;
+padding:0.5;
+  color:black;
+}
+.default{
+  background-color:yellow;
+  opacity:0.6;
+  font-weight:bold;
+  line-height:1.8;
+padding:0.5;
+  color:black;
 }

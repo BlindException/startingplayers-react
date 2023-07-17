@@ -132,16 +132,21 @@ fetchData();
 
 
 };
+const getPositionClassName = (position) => {
+    if (position == "QB" || position == "WR" || position == "RB" || position == "TE") {
+       return position;
+    } else {
+    return "default";
+     }
+}
 const handleSort = (column) => {
 
 
     if (sortedBy === column) {
     
+       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     
-    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    
-    
-    } else {
+       } else {
     
     
     setSortedBy(column);
@@ -419,47 +424,49 @@ Starting %
 
 {players.length === 0 ? (
 <tr>
-<td>Loading data...Please wait.</td>
+<td>Loading data...Please wait...</td>
 
 </tr>
 
 
 ) : (
+    
+    players.map((player) => {
+        const positionClass = getPositionClassName(player.position);
 
-
-players.map((player) => (
-
-
-<tr key={player.id}>
-
-
-<td>{player.name}</td>
-
-
-<td>{player.team}</td>
-
-
-<td>{player.position}</td>
-
-
-<td>{player.starter_count}</td>
-
-
-<td>{player.nonstarter_count}</td>
-
-
-<td>{player.starting_percent}%</td>
-
-
-</tr>
-
-
-))
-
-
-)}
-
-
+        
+        
+       
+        return (
+        <tr key={player.id} className={positionClass}>
+        
+        
+        <td className={positionClass}>{player.name}</td >
+        
+        
+        <td className={positionClass}>{player.team}</td>
+        
+        
+        <td className={positionClass}>{player.position}</td>
+        
+        
+        <td className={positionClass}>{player.starter_count}</td>
+        
+        
+        <td className={positionClass}>{player.nonstarter_count}</td>
+        
+        
+        <td className={positionClass}>{player.starting_percent}%</td>
+        
+        
+        </tr>
+        
+        
+        );
+        
+       
+}))}
+    
 </tbody>
 
 
