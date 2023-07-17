@@ -50,41 +50,17 @@ console.error(error);
 const handleTeamChange = (selectedTeam) => {
 setTeam(selectedTeam);
 };
-
-
 const handleSearchChange = (e) => {
-
-
 const value = e.target.value;
-
-
 setSearchValue(value);
-
-
 if (searchTimeout) {
-
-
 clearTimeout(searchTimeout);
-
-
 }
-
-
 setSearchTimeout(
-
-
 setTimeout(() => {
-
-
 fetchData();
-
-
 }, 3000)
-
-
 );
-
-
 };
 const getPositionClassName = (position) => {
     if (position == "QB" || position == "WR" || position == "RB" || position == "TE") {
@@ -94,10 +70,8 @@ const getPositionClassName = (position) => {
      }
 }
 const handleSort = (column) => {
-
-
     if (sortedBy === column) {
-    
+ 
        setSortOrder(sortOrder === 'desc' ? 'asc' : 'asc');
     
        } else {
@@ -389,16 +363,13 @@ Starting %
         <tr key={player.id} className={positionClass}>
         
         
-        <td className={positionClass}>{player.name}</td >
+        <td className={positionClass}><span>{player.name}</span></td >
         
-        
-        <td className={positionClass}>{player.team}</td>
-        
-        
-        <td className={positionClass}>{player.position}</td>
-        
-        
-        <td className={positionClass}>{player.starter_count}</td>
+                <td className={positionClass}><span>{player.team}</span></td>
+       
+       
+        <td className={positionClass}><span>{player.position}</span></td>
+                        <td className={positionClass}><span>{player.starter_count}</span></td>
         
         
         <td className={positionClass}>{player.nonstarter_count}</td>
