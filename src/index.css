@@ -20,7 +20,7 @@ code {
 .QB{
   background-color:blue;
   opacity:0.6;
-  font-weight:bold;
+  
 line-height:1.8;
 padding:0.5;
   color:black;
@@ -28,7 +28,7 @@ padding:0.5;
 .RB{
   background-color:green;
   opacity:0.6;
-  font-weight:bold;
+
   line-height:1.8;
 padding:0.5;
   color:black;
@@ -36,7 +36,7 @@ padding:0.5;
 .WR{
   background-color:pink;
   opacity:0.6;
-  font-weight:bold;
+  
   line-height:1.8;
 padding:0.5;
   color:black;
@@ -44,7 +44,7 @@ padding:0.5;
 .TE{
   background-color:purple;
   opacity:0.6;
-  font-weight:bold;
+
   line-height:1.8;
 padding:0.5;
   color:black;
@@ -52,8 +52,7 @@ padding:0.5;
 .default{
   background-color:yellow;
   opacity:0.6;
-  font-weight:bold;
-  line-height:1.8;
+    line-height:1.8;
 padding:0.5;
   color:black;
 }
