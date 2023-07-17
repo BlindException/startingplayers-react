@@ -21,8 +21,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "2022 Safe League Rosters",
-      "2022 Safe League Rosters/jest"
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
