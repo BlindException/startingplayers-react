@@ -363,19 +363,18 @@ Starting %
         <tr key={player.id} className={positionClass}>
         
         
-        <td className={positionClass}><span>{player.name}</span></td >
+        <td className={positionClass}><span className="tableText">{player.name}</span></td >
         
-                <td className={positionClass}><span>{player.team}</span></td>
+                <td className={positionClass}><span className="tableText">{player.team}</span></td>
        
        
-        <td className={positionClass}><span>{player.position}</span></td>
-                        <td className={positionClass}><span>{player.starter_count}</span></td>
+        <td className={positionClass}><span className="tableText">{player.position}</span></td>
+                        <td className={positionClass}><span className="tableText">{player.starter_count}</span></td>
         
         
-        <td className={positionClass}>{player.nonstarter_count}</td>
+        <td className={positionClass}><span className="tableText">{player.nonstarter_count}</span></td>
         
-        
-        <td className={positionClass}>{player.starting_percent}%</td>
+                <td className={positionClass}><span className="tableText">{player.starting_percent}%</span></td>
         
         
         </tr>
