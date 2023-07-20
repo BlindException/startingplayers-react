@@ -1,67 +1,373 @@
-body {
+ody {
+
+
   margin: 0;
+  
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  
+  
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  
+  
+  sans-serif;
+  
+  
   -webkit-font-smoothing: antialiased;
+  
+  
   -moz-osx-font-smoothing: grayscale;
-  background-color:lightgray;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-table{
-  background-color:white;
-  padding:15px;
-  margin-left:auto;
-  margin-right:auto;
+  
+  
+  background-color: lightgray;
+  
+  
   }
-label{
-  background-color:white;
-  border:2px solid black;
-}
-.QB{
-  background-color:blue;
-  opacity:0.6;
   
-line-height:1.8;
-padding:0.5;
-  color:black;
-}
-.RB{
-  background-color:green;
-  opacity:0.6;
-
-  line-height:1.8;
-padding:0.5;
-  color:black;
-}
-.WR{
-  background-color:pink;
-  opacity:0.6;
   
-  line-height:1.8;
-padding:0.5;
-  color:black;
-}
-.TE{
-  background-color:purple;
-  opacity:0.6;
-
-  line-height:1.8;
-padding:0.5;
-  color:black;
-}
-.default{
-  background-color:yellow;
-  opacity:0.6;
-    line-height:1.8;
-padding:0.5;
-  color:black;
-}
-.tableText{
-  opacity:1;
-  color:black;
-}
+  code {
+  
+  
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  
+  
+  monospace;
+  
+  
+  }
+  
+  
+  table {
+  
+  
+  background-color: white;
+  
+  
+  padding: 15px;
+  
+  
+  margin-left: auto;
+  
+  
+  margin-right: auto;
+  
+  
+  border-collapse: collapse;
+  
+  
+  width: 100%;
+  
+  
+  }
+  
+  
+  label {
+  
+  
+  background-color: white;
+  
+  
+  border: 2px solid black;
+  
+  
+  padding: 5px;
+  
+  
+  display: inline-block;
+  
+  
+  margin-bottom: 10px;
+  
+  
+  }
+  
+  
+  .QB {
+  
+  
+  background-color: RGB(173, 216, 230);
+  
+  
+  line-height: 1.8;
+  
+  
+  padding: 5px;
+  
+  
+  color: black;
+  
+  
+  }
+  
+  
+  .RB {
+  
+  
+  background-color: RGB(230, 230, 250);
+  
+  
+  line-height: 1.8;
+  
+  
+  padding: 5px;
+  
+  
+  color: black;
+  
+  
+  }
+  
+  
+  .WR {
+  
+  
+  background-color: RGB(255, 218, 225);
+  
+  
+  line-height: 1.8;
+  
+  
+  padding: 5px;
+  
+  
+  color: black;
+  
+  
+  }
+  
+  
+  .TE {
+  
+  
+  background-color: RGB(255, 255, 224);
+  
+  
+  line-height: 1.8;
+  
+  
+  padding: 5px;
+  
+  
+  color: black;
+  
+  
+  }
+  
+  
+  .default {
+  
+  
+  background-color: white;
+  
+  
+  line-height: 1.8;
+  
+  
+  padding: 5px;
+  
+  
+  color: black;
+  
+  
+  }
+  
+  
+  .container {
+  
+  
+  max-width: 1200px;
+  
+  
+  margin: 0 auto;
+  
+  
+  padding: 20px;
+  
+  
+  }
+  
+  
+  .text-center {
+  
+  
+  text-align: center;
+  
+  
+  }
+  
+  
+  .mt-5 {
+  
+  
+  margin-top: 5rem;
+  
+  
+  }
+  
+  
+  .row {
+  
+  
+  margin-bottom: 20px;
+  
+  
+  }
+  
+  
+  .col-md-6 {
+  
+  
+  width: 50%;
+  
+  
+  float: left;
+  
+  
+  padding: 10px;
+  
+  
+  box-sizing: border-box;
+  
+  
+  }
+  
+  
+  .col-md-12 {
+  
+  
+  width: 100%;
+  
+  
+  float: left;
+  
+  
+  padding: 10px;
+  
+  
+  box-sizing: border-box;
+  
+  
+  }
+  
+  
+  .form-control {
+  
+  
+  width: 100%;
+  
+  
+  padding: 10px;
+  
+  
+  border: 1px solid #ccc;
+  
+  
+  border-radius: 4px;
+  
+  
+  box-sizing: border-box;
+  
+  
+  }
+  
+  
+  .tableText {
+  
+  
+  display: block;
+  
+  
+  }
+  
+  
+  .table thead th {
+  
+  
+  background-color: #f9f9f9;
+  
+  
+  border-bottom: 1px solid #ddd;
+  
+  
+  padding: 10px;
+  
+  
+  cursor: pointer;
+  
+  
+  }
+  
+  
+  .table tbody td {
+  
+  
+  border-bottom: 1px solid #ddd;
+  
+  
+  padding: 10px;
+  
+  
+  }
+  
+  
+  .table tbody tr:last-child td {
+  
+  
+  border-bottom: none;
+  
+  
+  }
+  
+  
+  .btn-link {
+  
+  
+  background: none;
+  
+  
+  border: none;
+  
+  
+  padding: 0;
+  
+  
+  color: #007bff;
+  
+  
+  text-decoration: underline;
+  
+  
+  cursor: pointer;
+  
+  
+  }
+  
+  
+  .btn-link:focus,
+  
+  
+  .btn-link:hover {
+  
+  
+  text-decoration: none;
+  
+  
+  }
+  
+  
+  @media (max-width: 768px) {
+  
+  
+  .col-md-6 {
+  
+  
+  width: 100%;
+  
+  
+  float: none;
+  
+  
+  }
+  
+  
+  }

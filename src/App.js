@@ -90,291 +90,406 @@ const handleSort = (column) => {
 
 
 return (
-<div className="container">
-    <header>
-<h1 className="text-center mt-5">2022 Safe League Rosters</h1>
-</header>
-<div className="row">
-<div className="col-md-6">
-<label htmlFor="leagueType">League Type:</label>
-<select
-id="leagueType"
-value={leagueType}
-onChange={(e) => setLeagueType(e.target.value)}
-className="form-control"
->
-
-
-<option value="">ALL</option>
-
-
-<option value="Basic">Basic</option>
-
-
-<option value="Deluxe">Deluxe</option>
-
-
-<option value="Premium">Premium</option>
-
-
-</select>
-
-
-</div>
-
-
-<div className="col-md-6">
-
-
-<label htmlFor="week">Week:</label>
-
-
-<select
-
-
-id="week"
-
-
-value={week}
-
-
-onChange={(e) => setWeek(e.target.value)}
-
-
-className="form-control"
-
-
->
-
-
-<option value="">ALL</option>
-
-
-{Array.from({ length: 18 }, (_, i) => i + 1).map((week) => (
-
-
-<option key={week} value={week}>
-
-
-{week}
-
-
-</option>
-
-
-))}
-
-
-</select>
-
-
-</div>
-
-
-</div>
-
-
-<div className="row">
-
-
-<div className="col-md-6">
-
-
-<label htmlFor="team">Team:</label>
-
-
-<NFLDropDown onChange={handleTeamChange} />
-
-
-</div>
-
-
-<div className="col-md-6">
-
-
-<label htmlFor="position">Position:</label>
-
-
-<select
-
-
-id="position"
-
-
-value={position}
-
-
-onChange={(e) => setPosition(e.target.value)}
-
-
-className="form-control"
-
-
->
-
-
-<option value="">ALL</option>
-
-
-<option value="QB">QB</option>
-
-
-<option value="RB">RB</option>
-
-
-<option value="WR">WR</option>
-
-
-<option value="TE">TE</option>
-
-
-</select>
-
-
-</div>
-
-
-</div>
-
-
-<div className="row">
-
-
-<div className="col-md-6">
-
-
-<label htmlFor="search">Search for player name:</label>
-
-
-<input
-
-
-type="search"
-
-
-id="search"
-
-
-value={searchValue}
-
-
-onChange={handleSearchChange}
-
-
-className="form-control"
-
-
-/>
-
-
-</div>
-
-
-</div>
-
-
-<div className="row">
-
-
-<div className="col-md-12">
-
-
-<table className="table table-responsive">
-
-
-<thead>
-
-
-<tr>
-
-
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('name')}
->
-Player Name
-</button>
-</th>
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('team')}
->
-Team
-</button>
-</th>
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('position')}
->
-Position
-</button>
-</th>
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('starter_count')}
->
-Starts
-</button>
-</th>
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('nonstarter_count')}
->
-Non-Starts
-</button>
-</th>
-<th>
-<button
-className="btn btn-link"
-onClick={() => handleSort('starting_percent')}
->
-Starting %
-</button>
-
-</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-{players.length === 0 ? (
-<tr>
-<td>Loading data...Please wait...</td>
-
-</tr>
-
-
-) : (
-    
-    players.map((player) => {
+            <div className="container">
+        
+        
+        <header>
+        
+        
+        <h1 className="text-center mt-5">2022 Safe League Rosters</h1>
+     
+        
+        </header>
+        
+        
+        <div className="row">
+        
+        
+        <div className="col-md-6">
+        
+        
+        <label htmlFor="leagueType">Safe League Type:</label>
+        
+        
+        <select
+        
+        
+        id="leagueType"
+        
+        
+        value={leagueType}
+        
+        
+        onChange={(e) => setLeagueType(e.target.value)}
+        
+        
+        className="form-control"
+        
+        
+        >
+        
+        
+        <option value="">ALL</option>
+        
+        
+        <option value="Basic">Basic</option>
+        
+        
+        <option value="Deluxe">Deluxe</option>
+        
+        
+        <option value="Premium">Premium</option>
+        
+        
+        </select>
+        
+        
+        </div>
+        
+        
+        <div className="col-md-6">
+        
+        
+        <label htmlFor="week">Week:</label>
+        
+        
+        <select
+        
+        
+        id="week"
+        
+        
+        value={week}
+        
+        
+        onChange={(e) => setWeek(e.target.value)}
+        
+        
+        className="form-control"
+        
+        
+        >
+        
+        
+        <option value="">ALL</option>
+        
+        
+        {Array.from({ length: 18 }, (_, i) => i + 1).map((week) => (
+        
+        
+        <option key={week} value={week}>
+        
+        
+        {week}
+        
+        
+        </option>
+        
+        
+        ))}
+        
+        
+        </select>
+        
+        
+        </div>
+        
+        
+        </div>
+        
+        
+        <div className="row">
+        
+        
+        <div className="col-md-6">
+        
+        
+        <label htmlFor="team">Team:</label>
+        
+        
+        <NFLDropDown onChange={handleTeamChange} />
+        
+        
+        </div>
+        
+        
+        <div className="col-md-6">
+        
+        
+        <label htmlFor="position">Position:</label>
+        
+        
+        <select
+        
+        
+        id="position"
+        
+        
+        value={position}
+        
+        
+        onChange={(e) => setPosition(e.target.value)}
+        
+        
+        className="form-control"
+        
+        
+        >
+        
+        
+        <option value="">ALL</option>
+        
+        
+        <option value="QB">QB</option>
+        
+        
+        <option value="RB">RB</option>
+        
+        
+        <option value="WR">WR</option>
+        
+        
+        <option value="TE">TE</option>
+        
+        
+        </select>
+        
+        
+        </div>
+        
+        
+        </div>
+        
+        
+        <div className="row">
+        
+        
+        <div className="col-md-6">
+        
+        
+        <label htmlFor="search">Search for player name:</label>
+        
+        
+        <input
+        
+        
+        type="search"
+        
+        
+        id="search"
+        
+        
+        value={searchValue}
+        
+        
+        onChange={handleSearchChange}
+        
+        
+        className="form-control"
+        
+        
+        />
+        
+        
+        </div>
+        
+        
+        </div>
+        
+        
+        <div className="row">
+        
+        
+        <div className="col-md-12">
+        
+        
+        <table className="table table-responsive">
+        
+        
+        <thead>
+        
+        
+        <tr>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('name')}>
+        
+        
+        Player Name
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('team')}>
+        
+        
+        Team
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('position')}>
+        
+        
+        Position
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('starter_count')}>
+        
+        
+        Starts
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('nonstarter_count')}>
+        
+        
+        Non-Starts
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        <th>
+        
+        
+        <button className="btn btn-link" onClick={() => handleSort('starting_percent')}>
+        
+        
+        Starting %
+        
+        
+        </button>
+        
+        
+        </th>
+        
+        
+        </tr>
+        
+        
+        </thead>
+        
+        
+        <tbody>
+        
+        
+        {players.length === 0 ? (
+        
+        
+        <tr>
+        
+        
+        <td>Loading data...Please wait...</td>
+        
+        
+        </tr>
+        
+        
+        ) : (
+        
+        
+        players.map((player) => {
+        
+        
         const positionClass = getPositionClassName(player.position);
-
         
         
-       
         return (
+        
+        
         <tr key={player.id} className={positionClass}>
         
         
-        <td className={positionClass}><span className="tableText">{player.name}</span></td >
-        
-                <td className={positionClass}><span className="tableText">{player.team}</span></td>
-       
-       
-        <td className={positionClass}><span className="tableText">{player.position}</span></td>
-                        <td className={positionClass}><span className="tableText">{player.starter_count}</span></td>
+        <td className={positionClass}>
         
         
-        <td className={positionClass}><span className="tableText">{player.nonstarter_count}</span></td>
+        <span className="tableText">{player.name}</span>
         
-                <td className={positionClass}><span className="tableText">{player.starting_percent}%</span></td>
+        
+        </td>
+        
+        
+        <td className={positionClass}>
+        
+        
+        <span className="tableText">{player.team}</span>
+        
+        
+        </td>
+        
+        
+        <td className={positionClass}>
+        
+        
+        <span className="tableText">{player.position}</span>
+        
+        
+        </td>
+        
+        
+        <td className={positionClass}>
+        
+        
+        <span className="tableText">{player.starter_count}</span>
+        
+        
+        </td>
+        
+        
+        <td className={positionClass}>
+        
+        
+        <span className="tableText">{player.nonstarter_count}</span>
+        
+        
+        </td>
+        
+        
+        <td className={positionClass}>
+        
+        
+        <span className="tableText">{player.starting_percent}%</span>
+        
+        
+        </td>
         
         
         </tr>
@@ -382,19 +497,23 @@ Starting %
         
         );
         
-       
-}))}
-    
-</tbody>
-
-
-</table>
-
-
-</div>
-
-
-</div>
+        
+        })
+        
+        
+        )}
+        
+        
+        </tbody>
+        
+        
+        </table>
+        
+        
+        </div>
+        
+        
+        </div>
 
 
 </div>
