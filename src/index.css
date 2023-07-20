@@ -371,3 +371,33 @@ ody {
   
   
   }
+  .collapsible .content {
+    padding: 6px;
+    background-color: #eeeeee;
+}
+.collapsible .header {
+    background-color: #dddddd;
+    padding: 6px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+
+
+  .collapsible {
+    display: none;
+    }
+    .filteringContent{
+      display:block;
+    }
+      }
+      @media (max-width: 767px) {
+
+
+        .collapsible {
+          display: block;
+          }
+          .filteringContent{
+            display:none;
+          }
+            }
