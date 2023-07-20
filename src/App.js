@@ -295,7 +295,7 @@ return (
 </div>        
         <div className="collapsible">
         <div className="menuHeader" {...getToggleProps()}>
-            {isExpanded ? 'Collapse' : 'Expand'}
+            {isExpanded ? 'Done' : 'Filters'}
         </div>
         <div {...getCollapseProps()}>
             <div className="content">
