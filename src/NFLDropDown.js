@@ -6,7 +6,7 @@ const [team, setTeam] = useState('');
 useEffect(() => {
 const fetchData = async () => {
 try {
-const response = await axios.get('https://robertprockjr.com/mfl/teams/', {
+const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/teams', {
 mode: "cors"
 });
 setTeams(response.data);

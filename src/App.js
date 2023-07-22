@@ -22,7 +22,7 @@ fetchData();
 }, []);
 const fetchData = async () => {
 try {
-const response = await axios.get('https://robertprockjr.com/mfl_v2/', {
+const response = await axios.get('https://startingplayers-express-0dc55200c0a4.herokuapp.com/', {
 mode: "cors",
 params: {
 leagueType: leagueType,
@@ -43,7 +43,7 @@ name: 'No player data available.',
 },
 ]);
 } else {
-setPlayers(data);
+setPlayers(data['results']);
 }
 } catch (error) {
 console.error(error);
