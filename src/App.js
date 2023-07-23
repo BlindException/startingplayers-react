@@ -93,6 +93,7 @@ const handleSort = (column) => {
 
 return (
             <div className="container">
+                <div className="row">
         <header>
      
         
@@ -100,6 +101,8 @@ return (
      
         
         </header>
+        </div>
+        <div className="row">
         <div className="filteringContent container">
             <div className="row">
         
@@ -111,8 +114,7 @@ return (
         
         
         <select
-        
-        
+             
         id="leagueType"
         
         
@@ -293,6 +295,8 @@ return (
         </div>
         </div>
 </div>        
+</div>
+<div className="row">
         <div className="collapsible">
         <div className="menuHeader" {...getToggleProps()}>
             {isExpanded ? 'Done' : 'Filters'}
@@ -496,7 +500,7 @@ return (
         </div>
         
 
-                
+</div>                
             </div>
         </div>
 </div>    
