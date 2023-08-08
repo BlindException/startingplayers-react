@@ -696,8 +696,16 @@ return (
         
         
         </td>
-        
-        
+        <td className={positionClass}>
+        <span className="tableText">{player.w_starts}</span>
+
+        </td>
+        <td className={positionClass}>
+        <span className="tableText">{player.l_starts}</span>
+        </td>
+        <td className={positionClass}>
+        <span className="tableText">{player.starting_win_percent}%</span>
+        </td>
         </tr>
         
         
