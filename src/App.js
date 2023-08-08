@@ -580,27 +580,14 @@ return (
         </th>
         
         
-        <th>
-        
-        
-        <button className="btn btn-link" onClick={() => handleSort('nonstarter_count')}>
-        
-        
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('nonstarter_count')}>
         Non-Starts
-        
-        
         </button>
-        
-        
         </th>
-        
-        
         <th>
-        
-        
         <button className="btn btn-link" onClick={() => handleSort('starting_percent')}>
-        
-        
+      
         Starting %
         
         
@@ -608,11 +595,22 @@ return (
         
         
         </th>
-        
-        
-        </tr>
-        
-        
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('w_starts')}>
+        Winning Starts
+        </button>
+        </th>
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('l_starts')}>
+        Losing Starts
+        </button>
+        </th>
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('starting_win_percent')}>
+        Starting Win %
+        </button>
+        </th>
+                </tr>
         </thead>
         
         
