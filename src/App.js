@@ -8,6 +8,7 @@ function App() {
 const [players, setPlayers] = useState([]);
 const [leagueType, setLeagueType] = useState('');
 const [week, setWeek] = useState('');
+const [year, setYear] = useState('');
 const [team, setTeam] = useState('');
 const [position, setPosition] = useState('');
 const [searchValue, setSearchValue] = useState('');
@@ -28,6 +29,7 @@ params: {
 leagueType: leagueType,
 week: week,
 team: team,
+year:year,
 position: position,
 search: searchValue,
 sortedBy: sortedBy,
@@ -107,7 +109,7 @@ return (
             <div className="row">
         
         
-        <div className="col-md-6">
+        <div className="col-md-4">
         
         
         <label htmlFor="leagueType">Safe League Type:</label>
@@ -147,8 +149,44 @@ return (
         
         </div>
         
+        <div className="col-md-4">
+       
+      
+        <label htmlFor="year">Year:</label>
+                        <select
+             
+        id="year"
         
-        <div className="col-md-6">
+        
+        value={year}
+        
+        
+        onChange={(e) => setYear(e.target.value)}
+        
+        
+        className="form-control"
+        
+        
+        >
+        
+        
+        <option value="2022">2022</option>
+        
+        
+        <option value="2023">2023</option>
+        
+        
+        
+        
+        
+
+        
+        
+        </select>
+        
+        
+        </div>
+        <div className="col-md-4">
         
         
         <label htmlFor="week">Week:</label>
@@ -610,44 +648,31 @@ return (
         Starting Win %
         </button>
         </th>
-                </tr>
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('avg_team_points')}>
+        Avg Team Pts. w/Win
+        </button>
+        </th>
+        <th>      
+               <button className="btn btn-link" onClick={() => handleSort('avg_win_margin')}>
+        AVG Margin of Victory
+        </button>
+        </th>
+               </tr>
         </thead>
+                        <tbody>
+                        {players.length === 0 ? (
         
-        
-        <tbody>
-        
-        
-        {players.length === 0 ? (
-        
-        
-        <tr>
-        
-        
-        <td>Loading data...Please wait...</td>
-        
-        
-        </tr>
-        
-        
-        ) : (
-        
-        
-        players.map((player) => {
-        
-        
-        const positionClass = getPositionClassName(player.position);
-        
-        
-        return (
-        
-        
-        <tr key={player.id} className={positionClass}>
-        
-        
-        <td className={positionClass}>
-        
-        
-        <span className="tableText">{player.name}</span>
+                <tr>
+                        <td>Loading data...Please wait...</td>
+                        </tr>
+                        ) : (
+                        players.map((player) => {
+                        const positionClass = getPositionClassName(player.position);
+                        return (
+                        <tr key={player.id} className={positionClass}>
+                        <td className={positionClass}>
+                        <span className="tableText">{player.name}</span>
         
         
         </td>
@@ -705,6 +730,12 @@ return (
         </td>
         <td className={positionClass}>
         <span className="tableText">{player.starting_win_percent}%</span>
+        </td>
+        <td className={positionClass}>
+        <span className="tableText">{player.avg_team_points}</span>
+        </td>
+        <td className={positionClass}>
+        <span className="tableText">{player.avg_win_margin}</span>
         </td>
         </tr>
         
