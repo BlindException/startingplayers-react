@@ -85,11 +85,9 @@ const handleSort = (column) => {
     
     
     setSortOrder('desc');
-    
-    
+   
+
     }
-    
-    
     };
 
 
@@ -170,7 +168,7 @@ return (
         >
         
         
-        <option value="2022">2022</option>
+        <option value="2022" selected>2022</option>
         
         
         <option value="2023">2023</option>
@@ -408,7 +406,7 @@ return (
         >
         
         
-        <option value="2022">2022</option>
+        <option value="2022" selected>2022</option>
         
         
         <option value="2023">2023</option>
