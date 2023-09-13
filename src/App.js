@@ -387,7 +387,43 @@ return (
         
         </div>
         
+        <div className="col-md-6">
+       
+      
+        <label htmlFor="year">Year:</label>
+                        <select
+             
+        id="year"
         
+        
+        value={year}
+        
+        
+        onChange={(e) => setYear(e.target.value)}
+        
+        
+        className="form-control"
+        
+        
+        >
+        
+        
+        <option value="2022">2022</option>
+        
+        
+        <option value="2023">2023</option>
+        
+        
+        
+        
+        
+
+        
+        
+        </select>
+        
+        
+        </div>
         <div className="col-md-6">
         
         
